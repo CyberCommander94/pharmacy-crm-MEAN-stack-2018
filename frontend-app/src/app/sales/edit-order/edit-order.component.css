@@ -1,0 +1,84 @@
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: 1px solid #E3E4E8;
+	padding: 15px;
+}
+
+.add-item{
+	width: 60%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+.add-item input,
+.add-item textarea{
+	margin-bottom: 10px;
+	resize: none;
+}
+
+.add-item input:focus,
+.add-item textarea:focus,
+.add-item select:focus{
+	outline: none;
+}
+
+.add-item input{
+	border: none;
+	border-bottom: 1px solid #E7E8EC;
+	height: 40px;
+	padding-left: 5px;
+}
+
+.add-item textarea{
+	border: 1px solid #E7E8EC;
+}
+
+.add-item input[type="submit"]{
+	width: 50%;
+	background-color: #16A086;
+	color: white;
+	cursor: pointer;
+}
+
+.add-item input[type="button"]{
+	margin: 0 auto;
+	width: 50%;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+
+.add-item select{
+    border: none;
+	height: 40px;
+	border-bottom: 1px solid #E7E8EC;
+	margin-bottom: 10px;
+}
+
+.delBtnCentry{
+	display: flex;
+}
+
+.delBtn{
+	height: 30px;
+	position: relative;
+	bottom: -8px;
+	margin-right: 20px;
+	border: none;
+	background-color: #D9534F;
+	background-image: url("../../../assets/img/delete.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 20px 20px;
+	padding: 15px 30px;
+	color: white;
+}
+
+app-add-group{
+	width: 100%;
+}

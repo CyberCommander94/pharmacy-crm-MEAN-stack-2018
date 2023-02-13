@@ -1,0 +1,33 @@
+<app-supplies-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-supplies-header>
+<main>
+    <div class="info-block">
+      <p>{{suppliesData?.suppliers?.length}} постачальників</p>
+    </div>
+  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <td style="width: 5%">№</td>
+            <td style="width: 25%" class={{nameSort}} (click)="sortNameAct(suppliesData)">Назва</td>
+            <td style="width: 35%">Адреса</td>
+            <td style="width: 15%">Телефон</td>
+            <td class="btn-container"></td>
+            <td class="btn-container"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of suppliesData?.suppliers | filterNamesDrugs:filterStr.str; let i = index;">
+            <td (click)="viewSupplier(item?._id)">{{i + 1}}</td>
+            <td (click)="viewSupplier(item?._id)">{{item?.name}}</td>
+            <td (click)="viewSupplier(item?._id)">{{item?.address}}</td>
+            <td (click)="viewSupplier(item?._id)">{{item?.phone}}</td>
+            <td>
+              <input type="button" value="" class="btn btn-edit" title="Редагувати запис" (click)="editItem(item?._id)"/>
+            </td>
+            <td>
+              <input type="button" value="" class="btn btn-delete" title="Видалити запис" (click)="deleteItem(item?._id)"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </main>

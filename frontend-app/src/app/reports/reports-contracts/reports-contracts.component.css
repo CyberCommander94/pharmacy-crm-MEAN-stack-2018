@@ -1,0 +1,48 @@
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: 1px solid #E3E4E8;
+	padding: 15px;
+}
+
+table{
+    width: 100%;
+	font-family: RobotoRegular;
+}
+
+thead{
+    height: 40px;
+	border: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+}
+
+thead > tr > td:not(.btn-container){
+	border-right: 1px solid #E7E8EC;
+}
+
+tbody > tr{
+    height: 40px;
+	border-bottom: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+}
+
+tbody > tr:hover{
+	background-color: #EDEEF0;
+	cursor: pointer;
+}
+
+input[type="button"]{
+	color: white;
+	font-family: RobotoRegular;
+	border: none;
+	cursor: pointer;
+	background-color: #16A086;
+	width: 150px;
+	height: 30px;
+	margin: 10px 0;
+}

@@ -1,0 +1,22 @@
+<main>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>№ договору</td>
+        <td>Постачальник</td>
+        <td>Заг. кількість доставок</td>
+        <td>Кількість виконаних доставок</td>
+        <td>Статус договору</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cont of reportsData.contracts; let i = index;" (click)="viewContractReport(cont?._id)">
+        <td>{{cont?.contractNumber}}</td>
+        <td>{{cont?.supplierName}}</td>
+        <td>{{cont?.deliveryCount}}</td>
+        <td>{{cont?.deliveries.length}}</td>
+        <td>{{cont?.contractStatus}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

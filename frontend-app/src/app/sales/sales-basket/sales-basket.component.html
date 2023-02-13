@@ -1,0 +1,21 @@
+<app-sales-header [title]="title"></app-sales-header>
+<main>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>№ п/п</td>
+            <td>№ замовлення</td>
+            <td>Загальна сумма</td>
+            <td>Замовлення створив</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of sales; let i = index;">
+            <td (click)="viewOrder(order?._id)">{{i+1}}</td>  
+            <td (click)="viewOrder(order?._id)">{{order.saleNumber}}</td>
+            <td (click)="viewOrder(order?._id)">{{order.finishCost}}</td>
+            <td (click)="viewOrder(order?._id)">{{order.saleUser}}</td>
+          </tr>
+        </tbody>
+      </table>
+</main>

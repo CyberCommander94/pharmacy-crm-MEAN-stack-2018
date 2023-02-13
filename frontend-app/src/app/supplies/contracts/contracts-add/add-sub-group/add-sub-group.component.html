@@ -1,0 +1,8 @@
+<div [formGroup]="myForm">
+  <select formControlName="name" placeholder="Назва препарату" (change)="onChangeDrugName()">
+    <option value="" disabled selected>Оберіть препарат:</option>
+    <option value="{{item?.name}}" *ngFor="let item of selectedSupplierDrugs">{{item?.name}}</option>
+  </select>
+  <input type="text" formControlName="quantity" placeholder="Кількість упаковок" AUTOCOMPLETE="off">
+  <input type="text" value="{{selectedDrugCost}} грн." disabled formControlName="cost" placeholder="Ціна препарату">
+</div>

@@ -1,1 +1,1 @@
-# pharmacy-crm-MEAN-stack-2018
+# pharmacy-crm-MEAN-stack

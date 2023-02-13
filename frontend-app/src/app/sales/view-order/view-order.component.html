@@ -1,0 +1,54 @@
+<app-sales-header [title]="title"></app-sales-header>
+<main>
+  <table>
+    <tr>
+      <td>Номер замовлення:</td>
+      <td>{{order?.saleNumber}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Дата створення:</td>
+      <td>{{order?.saleDate | date:"hh:mm a, dd.MM.yyyy"}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Продавець:</td>
+      <td>{{order?.saleUser}}</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Препарати:</td>
+      <td>
+        Назва:
+      </td>
+      <td>Ціна(грн):</td>
+      <td>Кількість упаковок:</td>
+    </tr>
+    <tr *ngFor="let drug of order?.drugs" class="nobb">
+      <td></td>
+      <td>{{drug.drugName}}</td>
+      <td>{{drug.drugCost}}</td>
+      <td>{{drug.drugQuantity}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Фінальна ціна:</td>
+      <td>{{order?.finishCost}} грн</td>
+    </tr>
+  </table>
+  <div class="basket-btns">
+    <input type="button" value="Завершити продаж" (click)="execOrder(orderId)">
+    <input type="button" value="Редагувати замовлення" (click)="editOrder(orderId)">
+    <input type="button" value="Видилити замовлення" (click)="deleteOrder(orderId)">
+  </div>
+</main>

@@ -1,0 +1,38 @@
+<app-contracts-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-contracts-header>
+<main>
+  <div class="info-block">
+    <p>{{suppliesData?.delivery?.length}} доcтавок</p>
+  </div>
+  <form class="pop-up-edit-form" (ngSubmit)="editDelivery(editDeliveryId)" method="put">
+    <input type="button" (click)="closeBtn()" class="closeBtn">
+    <p>Редагувати</p>
+    <input type="text" placeholder="Номер накладної" name="deliveryNumber" [(ngModel)]="newDelivery.deliveryNumber" AUTOCOMPLETE="off">
+    <input type="submit" value="Редагувати доставку">
+  </form>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <td style="width: 20%">№ накладної</td>
+          <td style="width: 25%">№ договору</td>
+          <td style="width: 15%">Статус доставки</td>
+          <td style="width: 15%">Дата створення</td>
+          <td class="btn-container"></td>
+          <td class="btn-container"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of suppliesData?.delivery">
+          <td>{{item?.deliveryNumber}}</td>
+          <td (click)="viewContract(item.contractNumber)" class="contract-view">{{item?.contractNumber}}</td>
+          <td>{{item?.deliveryStatus}}</td>
+          <td>{{item?.creatingDate | date:"dd.MM.yyyy"}}</td>
+          <td>
+            <input type="button" value="" class="btn btn-trans-number" title="Ввести номер накладної" (click)="editDataObj(item?._id)"/>
+          </td>
+          <td>
+            <input type="button" value="" class="btn btn-check" title="Виконано" *ngIf="item?.deliveryNumber" (click)="doComplete(item?.deliveryNumber, item?.contractNumber, item?._id)"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</main>

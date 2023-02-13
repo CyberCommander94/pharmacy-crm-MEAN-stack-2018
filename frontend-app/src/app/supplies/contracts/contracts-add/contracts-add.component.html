@@ -1,0 +1,28 @@
+<app-contracts-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-contracts-header>
+<main>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" novalidate class="add-item">
+        <select formControlName="supplierName" placeholder="Назва постачальника" (change)="onChangeSupplier()">
+            <option value="" disabled selected>Оберіть постачальника:</option>
+            <option value="{{item?.name}}" *ngFor="let item of supplies?.suppliers">{{item?.name}}</option>
+        </select>
+        <input type="text" formControlName="contractNumber" placeholder="Номер договору" AUTOCOMPLETE="off">
+        <input type="text" formControlName="conclusionDate" placeholder="Дата заключення" AUTOCOMPLETE="off">
+        <input type="text" formControlName="startExecDate" placeholder="Дата початку виконання" AUTOCOMPLETE="off">
+        <input type="text" formControlName="maxDeliveryDuration" placeholder="Час на доставку(діб)" AUTOCOMPLETE="off">
+        <select formControlName="deliveryType" (change)="onChangeDeliveryType()">
+            <option value="" disabled selected>Тип доставок:</option>
+            <option value="Одноразова">Одноразова</option>
+            <option value="Періодична">Періодична</option>
+        </select>
+        <input type="text" formControlName="deliveryFrequency"  placeholder="Частота поставок(діб)" AUTOCOMPLETE="off">
+        <input type="text" formControlName="deliveryCount" placeholder="Кількість поставок" AUTOCOMPLETE="off">
+        <div formArrayName="formArray">
+            <div *ngFor="let control of myForm.controls['formArray'].controls; let i = index" class="delBtnCentry">
+                <button type="button" (click)="delInput(i)" class="delBtn"></button>
+                <app-add-sub-group [myForm]="myForm.controls.formArray.controls[i]" [selectedSupplierDrugs]="selectedSupplierDrugs"></app-add-sub-group>
+            </div>
+        </div>
+        <input type="button" (click)="addInput()" value="Додати препарат">
+        <input type="submit" [disabled]="!myForm.valid" value="Укласти договір">
+    </form>
+</main>

@@ -1,0 +1,43 @@
+<app-store-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-store-header>
+<main>
+  <div class="info-block">
+    <p>{{accStore?.storeItems?.length}} артикулів</p>
+  </div>
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <td style="width: 5%">№</td>
+          <td style="width: 15%" class={{transactionNumSort}} (click)="sortTransNumAct(accStore)">№ Накладної</td>
+          <td style="width: 25%" class={{nameSort}} (click)="sortNameAct(accStore)">Назва</td>
+          <td style="width: 9%" >Кількість</td>
+          <td style="width: 15%" class={{dateSort}} (click)="sortDateAct(accStore)">Дата виготовлення</td>
+          <td class="btn-container"></td>
+          <td class="btn-container"></td>
+          <td class="btn-container"></td>
+          <td class="btn-container"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of accStore?.storeItems | filterNamesDrugs:filterStr.str; let i = index;" [class.not-directory]="item?.checkDir == false">
+          <td>{{i + 1}}</td>
+          <td>{{item?.transactionNumber}}</td>
+          <td>{{item?.name}}</td>
+          <td>{{item?.count}}</td>
+          <td>{{item?.madeDate | date:"dd.MM.yyyy"}}</td>
+          <td>
+            <input type="button" value="" class="btn btn-edit" title="Редагувати запис" (click)="editItem(item?._id)"/>
+          </td>
+          <td>
+            <input type="button" value="" class="btn btn-delete" title="Видалити запис" (click)="deleteItem(item?._id)"/>
+          </td>
+          <td>
+            <input type="button" value="" class="btn btn-trade" title="Перемістити на склад реалізації" (click)="moveItemToTrade(item?._id, item?.checkDir)"/>
+          </td>
+          <td>
+            <input type="button" value="" class="btn btn-write-off" title="Перемістити на склад списання" (click)="moveItemToWriteOff(item?._id, item?.checkDir)"/>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</main>

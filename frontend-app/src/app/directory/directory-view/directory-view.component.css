@@ -1,0 +1,64 @@
+main{
+    position: relative;
+    box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+    border: 1px solid #E3E4E8;
+    padding: 15px
+}
+
+h1{
+    padding: 20px 20px 40px 10px;
+    font-size: 20px;
+    font-family: RobotoRegular;
+}
+
+table{
+    width: 100%;
+    font-family: RobotoRegular;
+    margin-bottom: 50px;
+}
+
+thead{
+    height: 40px;
+	border: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+}
+
+tbody > tr{
+    height: 40px;
+	border-bottom: 1px dashed black;
+	line-height: 38px;
+    text-align: left;
+}
+
+tbody > tr > td{
+    padding-left: 10px;
+}
+
+.nobb{
+    border-bottom: none!important;
+}
+
+.bt{
+    border-top: 1px dashed black!important;
+}
+
+.basket-btns{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 30px;
+}
+
+.basket-btns > input{
+    width: 25%;
+    margin-left: 10px;
+    margin-right: 15px;
+    color: white;
+    background-color: #16A086;
+    border: none;
+}

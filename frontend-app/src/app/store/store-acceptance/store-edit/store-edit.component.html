@@ -1,0 +1,9 @@
+<app-store-header [title]="title" [controls]="headBtnsVisibility"></app-store-header>
+<main>
+  <form class="add-item" (ngSubmit)="editItem()" method="put">
+    <input type="text" placeholder="Повна назва препарату" name="name" *ngIf="storeItem" [(ngModel)]="storeItem.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Кількість упаковок" name="count" *ngIf="storeItem" [(ngModel)]="storeItem.count" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Номер накладної" name="transactionNumber" *ngIf="storeItem" [(ngModel)]="storeItem.transactionNumber" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Дата виготовлення" name="madeDate" *ngIf="storeItem" [(ngModel)]="storeItem.madeDate" AUTOCOMPLETE="off"/>
+    <input type="submit" value="Зберегти зміни" /></form>
+</main>

@@ -1,0 +1,10 @@
+<main class="work-area">
+    <div class="logo"></div>
+    <form action="post" (ngSubmit)="doRegistration()">
+      <input type="text" name="name" placeholder="Прізвище та ініціали" AUTOCOMPLETE="off" [(ngModel)]="newUser.name">
+      <input type="text" name="post" placeholder="Посада" AUTOCOMPLETE="off" [(ngModel)]="newUser.post">
+      <input type="text" name="login" placeholder="Логін" AUTOCOMPLETE="off" [(ngModel)]="newUser.login">
+      <input type="text" name="password" placeholder="Пароль" AUTOCOMPLETE="off" [(ngModel)]="newUser.password">
+      <input type="submit" value="Зареєструватися" onsubmit="doRegistration()">
+    </form>
+  </main>

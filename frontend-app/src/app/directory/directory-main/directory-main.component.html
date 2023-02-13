@@ -1,0 +1,36 @@
+<app-directory-header [title]="title" [controls]="headBtnsVisibility" [filterStr]="filterStr"></app-directory-header>
+<main>
+  <div class="info-block">
+    <p>{{directory?.drugs?.length}} артикулів</p>
+    <p class="last-update">Останнє обновлення: {{directory?.editDate | date:"dd.MM.yyyy, hh:mm a"}} {{directory?.editUser}}</p>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>№</td>
+        <td class={{nameSort}} (click)="sortNameAct(directory)">Назва</td>
+        <td class={{costSort}} (click)="sortCostAct(directory)">Ціна(грн)</td>
+        <td>Вид упаковки</td>
+        <td class={{dateSort}} (click)="sortDateAct(directory)">Дата реєстрації</td>
+        <td class="btn-container"></td>
+        <td class="btn-container"></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let drug of directory.drugs | filterNamesDrugs:filterStr.str; let i = index;">
+        <td (click)="viewDrug(drug?._id)">{{i + 1}}</td>
+        <td (click)="viewDrug(drug?._id)">{{drug?.name}}</td>
+        <td (click)="viewDrug(drug?._id)">{{drug?.cost}}</td>
+        <td (click)="viewDrug(drug?._id)">{{drug?.pack}}</td>
+        <td (click)="viewDrug(drug?._id)">{{drug?.regDate | date:"dd.MM.yyyy"}}</td>
+        <td>
+          <input type="button" value="" class="btn btn-edit" title="Редагувати препарат" (click)="editDrug(drug?._id)"/>
+        </td>
+        <td>
+          <input type="button" value="" class="btn btn-delete" title="Видалити препарат" (click)="deleteDrug(drug?._id, drug?.name)"/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>

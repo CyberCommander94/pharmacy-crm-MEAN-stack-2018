@@ -1,0 +1,39 @@
+<app-contracts-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-contracts-header>
+<main>
+    <div class="info-block">
+      <p>{{suppliesData?.contracts?.length}} договорів</p>
+    </div>
+  
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <td style="width: 7%">№</td>
+            <td style="width: 15%">Постачальник</td>
+            <td style="width: 13%">Дата створення</td>
+            <td style="width: 14%">Дата старту виконання</td>
+            <td style="width: 10%">Кільк. поставок</td>
+            <td style="width: 15%">Тип поставок</td>
+            <td style="width: 10%">Статус</td>
+            <td class="btn-container"></td>
+            <td class="btn-container"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of suppliesData?.contracts; let i = index;"><!-- | filterNamesDrugs:filterStr.str-->
+            <td (click)="goViewContract(item?._id)">{{item?.contractNumber}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.supplierName}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.conclusionDate | date:"dd.MM.yyyy"}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.startExecDate | date:"dd.MM.yyyy"}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.deliveryCount}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.deliveryType}}</td>
+            <td (click)="goViewContract(item?._id)">{{item?.contractStatus}}</td>
+            <td>
+              <input type="button" value="" class="btn btn-edit" title="Редагувати запис" (click)="goEditContract(item?._id)"/>
+            </td>
+            <td>
+              <input type="button" value="" class="btn btn-delete" title="Видалити запис" (click)="goDeleteContract(item?._id)"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </main>

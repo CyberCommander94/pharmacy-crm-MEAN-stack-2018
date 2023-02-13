@@ -1,0 +1,45 @@
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: 1px solid #E3E4E8;
+	padding: 15px;
+}
+
+.add-item{
+	width: 60%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+}
+.add-item input,
+.add-item textarea{
+	margin-bottom: 10px;
+	resize: none;
+}
+
+.add-item input:focus,
+.add-item textarea:focus{
+	outline: none;
+}
+
+.add-item input{
+	border: none;
+	border-bottom: 1px solid #E7E8EC;
+	height: 40px;
+}
+
+.add-item textarea{
+	border: 1px solid #E7E8EC;
+}
+
+.add-item input[type="submit"]{
+	width: 50%;
+	background-color: #16A086;
+	color: white;
+	cursor: pointer;
+}

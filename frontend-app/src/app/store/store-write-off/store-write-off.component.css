@@ -1,0 +1,192 @@
+.work-area{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: 1px solid #E3E4E8;
+	padding: 15px;
+}
+
+.info-block{
+	box-sizing: border-box;
+	height: 40px;
+	margin-bottom: 15px;
+	width: 100%;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10px 0 10px;
+	border: 1px solid #E7E8EC;
+	font-family: RobotoRegular;
+	border-radius: 2px;
+}
+
+.last-update{
+	font-size: 14px;
+}
+
+table{
+    width: 100%;
+	font-family: RobotoRegular;
+}
+
+thead{
+    height: 40px;
+	border: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+thead > tr > td{
+	line-height: 25px;
+}
+
+thead > tr > td:not(.btn-container){
+	border-right: 1px solid #E7E8EC;
+}
+
+.btn-container{
+    width: 6%;
+}
+
+tbody > tr{
+    height: 40px;
+	border-bottom: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+}
+
+tbody > tr:hover{
+	background-color: #EDEEF0;
+	cursor: pointer;
+}
+
+tbody > tr > td > input[type="button"]{
+    width: 90%;
+    height: 35px;
+    border: none;
+    background-repeat: no-repeat;
+	background-position: center center;
+    padding: 0 18px;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+tbody > tr:hover > td > input[type="button"]{
+	visibility: visible;
+}
+
+tbody > tr > td > input[type="button"]:hover{
+    cursor: pointer;
+}
+
+.btn-delete{
+    background-size: 25px 25px;
+    background-color: #D9534F;
+    background-image: url(../../../assets/img/delete.png);
+}
+
+.btn-write-off{
+	background-size: 35px 35px;
+	background-position: 11px center!important;
+    background-color: #D9534F;
+    background-image: url(../../../assets/img/truck.png);
+}
+
+.active-sort{
+	cursor: pointer;
+	box-shadow: inset -1px -20px 57px -28px rgba(24,113,222,1);
+}
+
+.unactive-sort{
+	cursor: pointer;
+}
+
+.unactive-sort:hover{
+	box-shadow: inset 0px 0px 21px -9px rgba(0,0,0,1);
+}
+
+.pop-up-edit-form{
+    position: fixed;
+    width: 500px;
+    height: 100px;
+    z-index: 110;
+    top: 170px;
+    right: 330px;
+    background-color: #EDEEF0;
+    border: 3px solid #E7E8EC;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.unactive{
+    display: none;
+}
+
+.pop-up-edit-form > input[type="text"]{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.closeBtn{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #D9534F!important;
+    text-align: center;
+    right: 10px;
+    top: -5px;
+    cursor: pointer;
+    background: url("../../../assets/img/x-mark.png") no-repeat center center;
+    background-size: 10px 10px;
+}
+
+form{
+	font-family: RobotoRegular;
+    padding: 10px;
+    border: 1px solid #E3E4E8;
+    margin: 20px 0;
+}
+
+form > p{
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+input[type="text"]{
+    height: 25px;
+    margin-right: 10px;
+}
+
+input[type="submit"]{
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    background-color: #16A086;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+form > input[type="button"]{
+    height: 30px;
+    margin: 20px 10px 0 0;
+    border: none;
+    background-color: #16A086;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}

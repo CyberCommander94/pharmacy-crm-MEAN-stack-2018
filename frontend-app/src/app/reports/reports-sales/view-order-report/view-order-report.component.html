@@ -1,0 +1,54 @@
+<main>
+  <div id="content">
+    <h1>Звіт з продажу № {{orderData?.saleNumber}}</h1>
+    <table>
+      <tr>
+        <td>Номер замовлення:</td>
+        <td>{{orderData?.saleNumber}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Дата створення:</td>
+        <td>{{orderData?.saleDate | date:"hh:mm a, dd.MM.yyyy"}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Продавець:</td>
+        <td>{{orderData?.saleUser}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Препарати:</td>
+        <td>
+          Назва:
+        </td>
+        <td>Ціна(грн):</td>
+        <td>Кількість упаковок:</td>
+      </tr>
+      <tr *ngFor="let drug of orderData?.drugs" class="nobb">
+        <td></td>
+        <td>{{drug?.drugName}}</td>
+        <td>{{drug?.drugCost}}</td>
+        <td>{{drug?.drugQuantity}}</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Фінальна ціна:</td>
+        <td>{{orderData?.finishCost}} грн</td>
+      </tr>
+    </table>
+  </div>
+  <div class="basket-btns">
+    <input type="button" value="Експортувати в PDF" (click)="downloadPDF()">
+  </div>
+</main>

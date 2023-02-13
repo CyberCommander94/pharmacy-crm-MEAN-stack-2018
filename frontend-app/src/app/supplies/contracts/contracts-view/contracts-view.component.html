@@ -1,0 +1,18 @@
+<app-contracts-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-contracts-header>
+<main>
+  <p><strong>Номер контракту: </strong>{{contract?.contractNumber}}</p>
+  <p><strong>Дата заключення: </strong>{{contract?.conclusionDate}}</p>
+  <p><strong>Дата початку виконання: </strong>{{contract?.startExecDate}}</p>
+  <p><strong>Назва постачальника: </strong>{{contract?.supplierName}}</p>
+  <p><strong>Статус контракту: </strong>{{contract?.contractStatus}}</p>
+  <p><strong>Тип поставок: </strong>{{contract?.deliveryType}}</p>
+  <ul>Препарати:
+    <li *ngFor="let item of contract?.contractDrugs">
+      Назва: {{item?.name}}, Ціна: {{item?.cost}}грн., Кількість упаковок: {{item?.quantity}}
+    </li>
+  </ul>
+  <p><strong>Частота поставок(діб): </strong>{{contract?.deliveryFrequency}}</p>
+  <p><strong>Час на доставку(діб): </strong>{{contract?.maxDeliveryDuration}}</p>
+  <p><strong>Кількість поставок: </strong>{{contract?.deliveryCount}}</p>
+  <p><strong>Кількість виконаних поставок: </strong>{{contract?.currDeliveryCount}}</p>
+</main>

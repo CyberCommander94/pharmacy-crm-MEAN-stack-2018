@@ -1,0 +1,104 @@
+.main-navigation{
+	width: 100%;
+}
+
+.main-navigation ul{
+	list-style-type: none;
+}	
+
+.main-navigation ul li{
+	position: relative;
+	display: block;
+	min-height: 35px;
+}
+
+.main-navigation > ul > li > a:hover{
+	border-left: 4px solid white;
+	padding-left: 66px;
+	overflow: hidden;
+}
+
+.main-navigation ul > li > a{
+	box-sizing: border-box;
+    display: block;
+    text-decoration: none;
+	line-height: 35px;
+	width: 100%!important;
+	color: #E6DDEE;
+	font-family: HelveticaNeue;
+	padding-left: 70px;
+	cursor: pointer;
+}
+
+.active-lnk{
+	border-left: 4px solid white;
+	padding-left: 66px!important;
+}
+
+.directory-ico::before{
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 6px;
+	background: url(../../../assets/img/open-book.png) no-repeat center center;
+	background-size: cover;
+}
+
+.sales-ico::before{
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 6px;
+	background: url(../../../assets/img/coin.png) no-repeat center center;
+	background-size: cover;
+}
+
+.store-ico::before{
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 6px;
+	background: url(../../../assets/img/store.png) no-repeat center center;
+	background-size: cover;
+}
+
+.supply-ico::before{
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 6px;
+	background: url(../../../assets/img/truck.png) no-repeat center center;
+	background-size: cover;
+}
+
+.statistics-ico::before{
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 40px;
+	top: 6px;
+	background: url(../../../assets/img/bar-chart.png) no-repeat center center;
+	background-size: cover;
+}
+
+.main-navigation ul li ul{
+	list-style-type: none;
+}
+
+.main-navigation ul li ul li{
+	height: 20px;
+	padding-left: 22px;
+}
+
+.drop-menu{
+	display: none;
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "RobotoRegular";
+    src: url("../assets/fonts-dir/RobotoRegular/RobotoRegular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url("../assets/fonts-dir/HelveticaNeue/HelveticaNeue.ttf") format("truetype");
+}

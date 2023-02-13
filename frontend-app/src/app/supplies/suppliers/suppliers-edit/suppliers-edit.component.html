@@ -1,0 +1,9 @@
+<app-supplies-header [title]="title" [controls]="headBtnsVisibility"></app-supplies-header>
+<main>
+  <form class="add-item" (ngSubmit)="editItem()" method="post">
+    <input type="text" placeholder="Назва постачальника" name="name" *ngIf="supplier" [(ngModel)]="supplier.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Адреса потужностей" name="address" *ngIf="supplier"  [(ngModel)]="supplier.address" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Телефон" name="phone" *ngIf="supplier"  [(ngModel)]="supplier.phone" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Електронна пошта" name="email" *ngIf="supplier"  [(ngModel)]="supplier.email" AUTOCOMPLETE="off"/>
+    <input type="submit" value="Редагувати дані" /></form>
+</main>

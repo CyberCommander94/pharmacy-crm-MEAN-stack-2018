@@ -1,0 +1,20 @@
+<main>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>№ доставки</td>
+        <td>Назва препарату</td>
+        <td>Кількість</td>
+        <td>Причина списання</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reportsData.writeOff; let i = index;" (click)="viewWriteOffReport(report?._id)">
+        <td>{{report?.transactionNumber}}</td>
+        <td>{{report?.name}}</td>
+        <td>{{report?.count}}</td>
+        <td>{{report?.reason}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

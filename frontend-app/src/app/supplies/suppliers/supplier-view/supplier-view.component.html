@@ -1,0 +1,46 @@
+<app-supplies-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-supplies-header>
+<main>
+  <form class="pop-up-edit-form" (ngSubmit)="editDrug(editDrugId, supplier._id)" method="put">
+    <input type="button" (click)="closeBtn()" class="closeBtn">
+    <p>Редагувати</p>
+    <input type="text" placeholder="Назва" name="name" *ngIf="editedDrug" [(ngModel)]="editedDrug.name">
+    <input type="text" placeholder="Ціна" name="cost" *ngIf="editedDrug" [(ngModel)]="editedDrug.cost">
+    <input type="submit" value="Редагувати препарат">
+  </form>
+  <p><span>Назва:</span> {{supplier?.name}}</p>
+  <p><span>Адреса:</span> {{supplier?.address}}</p>
+  <p><span>Телефон:</span> {{supplier?.phone}}</p>
+  <p><span>eMail:</span> {{supplier?.email}}</p>
+  <input type="button" value="Редагувати" (click)="editItem(supplier?._id)">
+  <input type="button" value="Видалити" (click)="deleteItem(supplier?._id)">
+  <form (ngSubmit)="addItem()" method="post">
+    <p>Препарати</p>
+    <input type="text" placeholder="Назва" name="name" [(ngModel)]="newDrug.name">
+    <input type="text" placeholder="Ціна" name="cost" [(ngModel)]="newDrug.cost">
+    <input type="submit" value="Додати препарат">
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <td style="width: 5%">№</td>
+        <td style="width: 35%" class={{nameSort}} (click)="sortNameAct(supplier)">Назва</td>
+        <td style="width: 35%">Ціна</td>
+        <td class="btn-container"></td>
+        <td class="btn-container"></td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of supplier?.drugs | filterNamesDrugs:filterStr.str; let i = index;">
+          <td>{{i + 1}}</td>
+          <td>{{item?.name}}</td>
+          <td>{{item?.cost}}</td>
+          <td>
+            <input type="button" value="" class="btn btn-edit" title="Редагувати запис" (click)="editDataObj(item?._id)"/>
+          </td>
+          <td>
+            <input type="button" value="" class="btn btn-delete" title="Видалити запис" (click)="deleteDrug(item?._id, supplier._id)"/>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</main>

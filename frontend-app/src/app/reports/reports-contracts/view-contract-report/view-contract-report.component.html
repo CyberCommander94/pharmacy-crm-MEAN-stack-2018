@@ -1,0 +1,34 @@
+<main>
+  <div class="basket-btns">
+    <input type="button" value="Експортувати в PDF" (click)="downloadPDF()">
+  </div>
+  <div id="content">
+    <p><span>Номер контракту: </span> {{contractData?.contractNumber}}</p>
+    <p><span>Дата заключення: </span> {{contractData?.conclusionDate}}</p>
+    <p><span>Дата початку виконання: </span> {{contractData?.startExecDate}}</p>
+    <p><span>Назва постачальника: </span> {{contractData?.supplierName}}</p>
+    <p><span>Статус контракту: </span> {{contractData?.contractStatus}}</p>
+    <p><span>Тип поставок: </span> {{contractData?.deliveryType}}</p>
+    <p><span>Частота поставок: </span> {{contractData?.deliveryFrequency}}</p>
+    <p><span>Максимальний час доставки: </span> {{contractData?.maxDeliveryDuration}}</p>
+    <p><span>Загальна кількість доставок: </span> {{contractData?.deliveryCount}}</p>
+    <p><span>Кількість виконаних доставок: </span> {{contractData?.deliveries.length}}</p>
+    <p class="table-title">Доставки по договору:</p>
+    <table>
+      <thead>
+        <tr>
+          <td>№ доставки</td>
+          <td>Дата створення</td>
+          <td>Дата доставки</td>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let item of contractData?.deliveries">
+            <td>{{item?.deliveryNumber}}</td>
+            <td>{{item?.creatingDate | date:"dd.MM.yyyy"}}</td>
+            <td>{{item?.deliveryDate | date:"dd.MM.yyyy"}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</main>

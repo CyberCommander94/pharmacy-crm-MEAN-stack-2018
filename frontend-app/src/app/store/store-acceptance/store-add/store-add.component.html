@@ -1,0 +1,9 @@
+<app-store-header [title]="title" [controls]="headBtnsVisibility"></app-store-header>
+<main>
+  <form class="add-item" (ngSubmit)="addItem()" method="post">
+    <input type="text" placeholder="Повна назва препарату" name="name" [(ngModel)]="newStoreItem.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Кількість упаковок" name="count" [(ngModel)]="newStoreItem.count" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Номер накладної" name="transactionNumber" [(ngModel)]="newStoreItem.transactionNumber" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Дата виготовлення" name="madeDate" [(ngModel)]="newStoreItem.madeDate" AUTOCOMPLETE="off"/>
+    <input type="submit" value="Додати препарат" /></form>
+</main>

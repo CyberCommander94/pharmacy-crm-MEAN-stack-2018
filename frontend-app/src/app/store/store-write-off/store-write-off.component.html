@@ -1,0 +1,45 @@
+<div class="work-area">
+  <app-store-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-store-header>
+  <main>
+    <form class="pop-up-edit-form" (ngSubmit)="doSubmit()" method="post">
+      <input type="button" (click)="closeBtn()" class="closeBtn">
+      <p>Списання препарату</p>
+      <input type="text" placeholder="Причина списання" name="reason" *ngIf="writeOffDrug" [(ngModel)]="writeOffDrug.reason">
+      <input type="submit" value="Списати препарат">
+    </form>
+    <div class="info-block">
+      <p>{{writeOffStore?.storeItems?.length}} артикулів</p>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <td style="width: 5%">№</td>
+            <td style="width: 22%" class={{transactionNumSort}} (click)="sortTransNumAct(writeOffStore)">№ Накладної</td>
+            <td style="width: 22%" class={{nameSort}} (click)="sortNameAct(writeOffStore)">Назва</td>
+            <td style="width: 9%" >Кількість</td>
+            <td style="width: 15%" class={{dateSort}} (click)="sortDateAct(writeOffStore)">Дата виготовлення</td>
+            <td style="width: 15%">Термін придатності (діб)</td>
+            <td class="btn-container"></td>
+            <td class="btn-container"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of writeOffStore?.storeItems | filterNamesDrugs:filterStr.str; let i = index;">
+            <td>{{i + 1}}</td>
+            <td>{{item?.transactionNumber}}</td>
+            <td>{{item?.name}}</td>
+            <td>{{item?.count}}</td>
+            <td>{{item?.madeDate | date:"dd.MM.yyyy"}}</td>
+            <td>{{item?.shelfLife}}</td>
+            <td>
+              <input type="button" value="" class="btn btn-delete" title="Cписати" (click)="doWrireOff(item?._id)"/>
+            </td>
+            <td>
+              <input type="button" value="" class="btn btn-write-off" title="Повернути постачальнику" (click)="doReturn(item?._id)"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </main>
+</div>

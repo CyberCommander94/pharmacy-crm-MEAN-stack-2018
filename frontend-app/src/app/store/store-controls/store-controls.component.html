@@ -1,0 +1,7 @@
+<div class="header-btns">
+  <form>
+    <input type="text" placeholder="Назва препарату" [(ngModel)]="filterStr.str" [ngModelOptions]="{standalone: true}">
+    <input type="submit" title="Знайти препарат" value="">
+  </form>
+  <input type="button" value="+" title="Додати препарат" *ngIf="addBtn" (click)="goAddItem()"/>
+</div>

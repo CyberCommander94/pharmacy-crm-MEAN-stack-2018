@@ -1,0 +1,47 @@
+<main>
+    <div id="content">
+      <h1>Звіт за останній місяць по реалізації продукції</h1>
+      <table>
+        <tr>
+          <td>Кількість квитанцій:</td>
+          <td>{{monthsOrders.length}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Препарати:</td>
+          <td>
+            Назва:
+          </td>
+          <td>Ціна(грн):</td>
+          <td>Кількість упаковок:</td>
+          <td>Заг. виручка(грн)</td>
+        </tr>
+        <tr *ngFor="let drug of monthsOrdersDrugs" class="nobb">
+          <td></td>
+          <td>{{drug?.drugName}}</td>
+          <td>{{drug?.drugCost}}</td>
+          <td>{{drug?.drugQuantity}}</td>
+          <td>{{drug?.drugCost * drug?.drugQuantity}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Фінальна виручка:</td>
+          <td>{{finishCost}} грн</td>
+        </tr>
+      </table>
+    </div>
+    <div class="basket-btns">
+      <input type="button" value="Експортувати в PDF" (click)="downloadPDF()">
+    </div>
+  </main>

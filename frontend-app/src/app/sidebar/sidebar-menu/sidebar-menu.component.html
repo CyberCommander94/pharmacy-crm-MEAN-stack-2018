@@ -1,0 +1,37 @@
+<nav class="main-navigation">
+  <ul>
+    <li class="directory-ico"><a routerLink="/directory">Довідник</a></li>
+    <li class="sales-ico" (click)="changeVisibility(1)">
+      <a>Продаж</a>
+      <ul *ngIf="salesVisible">
+        <li><a routerLink="/sales/main">Нове замовлення</a></li>
+        <li><a routerLink="/sales/basket">Кошик</a></li>
+      </ul>
+    </li>
+    <li class="store-ico" (click)="changeVisibility(2)">
+      <a>Склад</a>
+      <ul *ngIf="storeVisible">
+        <li  *ngIf="currUser?.post != 'Касир'"><a routerLink="/storeAcceptance/main">Склад поставок</a></li>
+        <li><a routerLink="/storeTrade">Склад реалізації</a></li>
+        <li  *ngIf="currUser?.post != 'Касир'"><a routerLink="/storeWriteOff">Склад списання</a></li>
+      </ul>
+    </li>
+    <li  *ngIf="currUser?.post != 'Касир'" class="supply-ico" (click)="changeVisibility(3)">
+      <a>Поставки</a>
+      <ul *ngIf="supplyVisible">
+        <li><a routerLink="/suppliers/main">Постачальники</a></li>
+        <li><a routerLink="/contracts/main">Договори</a></li>
+        <li><a routerLink="/deliveries/main">Доставка</a></li>
+      </ul>
+    </li>	
+    <li class="statistics-ico" (click)="changeVisibility(4)">
+      <a>Звіти/статистика</a>
+      <ul *ngIf="statVisible">
+          <li *ngIf="currUser?.post != 'Касир'"><a routerLink="reports/contractsReports">Контракти</a></li>
+          <li><a routerLink="reports/salesReports">Продаж</a></li>
+          <li *ngIf="currUser?.post != 'Касир'"> <a routerLink="reports/writeOffReports">Списання препаратів</a></li>
+          <li *ngIf="currUser?.post != 'Касир'"><a routerLink="reports/returnsReports">Повернення</a></li>
+        </ul>
+    </li>
+  </ul>
+</nav>

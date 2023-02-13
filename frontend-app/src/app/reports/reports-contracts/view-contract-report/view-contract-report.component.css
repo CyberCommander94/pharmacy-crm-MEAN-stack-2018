@@ -1,0 +1,192 @@
+main{
+    position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	background-color: #ffffff;
+	border-radius: 2px;
+	border: 1px solid #E3E4E8;
+    font-family: RobotoRegular;
+}
+
+#content{
+    padding: 15px;
+}
+
+main p{
+    line-height: 30px;
+}
+
+main p span{
+    font-weight: bold;
+}
+
+form{
+    padding: 10px;
+    border: 1px solid #E3E4E8;
+    margin: 20px 0;
+}
+
+form > p{
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+input[type="text"]{
+    height: 25px;
+    margin-right: 10px;
+}
+
+input[type="submit"]{
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    background-color: #16A086;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+input[type="button"]{
+    height: 30px;
+    margin: 20px 10px 0 0;
+    border: none;
+    background-color: #16A086;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+input[value="Видалити"]{
+    background-color: #D9534F;
+}
+
+td > input[type="button"]{
+    margin-top: 0px;
+}
+
+table{
+    width: 100%;
+    font-family: RobotoRegular;
+}
+
+thead{
+    height: 40px;
+	border: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+	vertical-align: bottom;
+}
+
+thead > tr > td:not(.btn-container){
+	border-right: 1px solid #E7E8EC;
+}
+
+.btn-container{
+    width: 7%;
+}
+
+tbody > tr{
+    height: 40px;
+	border-bottom: 1px solid #E7E8EC;
+	line-height: 38px;
+	text-align: center;
+}
+
+tbody > tr:hover{
+	background-color: #EDEEF0;
+	cursor: pointer;
+}
+
+tbody > tr > td > input[type="button"]{
+    width: 90%;
+    height: 35px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+    padding: 0 18px;
+	vertical-align: middle;
+	visibility: hidden;
+}
+
+tbody > tr:hover > td > input[type="button"]{
+	visibility: visible;
+}
+
+tbody > tr > td > input[type="button"]:hover{
+    cursor: pointer;
+}
+
+.btn-edit{
+    background-color: #16A086;
+    background-image: url(../../../../assets/img/edit.png);
+}
+
+.btn-delete{
+    background-color: #D9534F!important;
+    background-image: url(../../../../assets/img/delete.png);
+}
+
+.active-sort{
+	cursor: pointer;
+	box-shadow: inset -1px -20px 57px -28px rgba(24,113,222,1);
+}
+
+.unactive-sort{
+	cursor: pointer;
+}
+
+.unactive-sort:hover{
+    box-shadow: inset 0px 0px 21px -9px rgba(0,0,0,1);
+}
+
+.pop-up-edit-form{
+    position: fixed;
+    width: 500px;
+    height: 150px;
+    z-index: 110;
+    top: 170px;
+    right: 330px;
+    background-color: #EDEEF0;
+    border: 3px solid #E7E8EC;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.unactive{
+    display: none;
+}
+
+.pop-up-edit-form > input[type="text"]{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.closeBtn{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #D9534F!important;
+    text-align: center;
+    right: 10px;
+    top: -5px;
+    cursor: pointer;
+    background: url("../../../../assets/img/x-mark.png") no-repeat center center;
+    background-size: 10px 10px;
+}
+
+.basket-btns{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.table-title{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}

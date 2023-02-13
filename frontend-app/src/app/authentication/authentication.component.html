@@ -1,0 +1,11 @@
+<main class="work-area">
+  <div class="logo"></div>
+  <form action="post" (ngSubmit)="login()">
+    <input type="text" name="login" [(ngModel)]="loginData.login" placeholder="Логін" AUTOCOMPLETE="off" pattern="[a-zA-Z0-9]{3,20}">
+    <input type="password" name="password" [(ngModel)]="loginData.password" placeholder="Пароль" AUTOCOMPLETE="off" pattern="[a-zA-Z0-9]{3,20}">
+    <div class="form-btns">
+      <input type="submit" value="Авторизуватися">
+      <input type="button" value="Зареєструватися" (click)="goRegister()">
+    </div>
+  </form>
+</main>

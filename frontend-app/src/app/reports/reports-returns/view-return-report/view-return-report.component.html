@@ -1,0 +1,40 @@
+<main>
+    <div id="content">
+      <h1>Звіт по поверненню препарату "{{drugData?.name}}"</h1>
+      <table>
+        <tr>
+          <td>Номер доставки:</td>
+          <td>{{drugData?.transactionNumber}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Кількість упаковок:</td>
+          <td>{{drugData?.count}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Дата виготовлення:</td>
+          <td>{{drugData?.madeDate | date: "dd.MM.yyyy"}}</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+            <td>Термін придатності(діб)</td>
+            <td>{{drugData?.shelfLife}}</td>
+            <td></td>
+            <td></td>
+          </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Причина повернення:</td>
+          <td>{{drugData?.reason}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="basket-btns">
+      <input type="button" value="Експортувати в PDF" (click)="downloadPDF()">
+    </div>
+  </main>

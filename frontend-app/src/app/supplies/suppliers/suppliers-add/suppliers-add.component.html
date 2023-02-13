@@ -1,0 +1,9 @@
+<app-supplies-header [title]="title" [controls]="headBtnsVisibility"></app-supplies-header>
+<main>
+  <form class="add-item" (ngSubmit)="addItem()" method="post">
+    <input type="text" placeholder="Назва постачальника" name="name" [(ngModel)]="newSupplier.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Адреса потужностей" name="address" [(ngModel)]="newSupplier.address" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Телефон" name="phone" [(ngModel)]="newSupplier.phone" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Електронна пошта" name="email" [(ngModel)]="newSupplier.email" AUTOCOMPLETE="off"/>
+    <input type="submit" value="Додати постачальника" /></form>
+</main>

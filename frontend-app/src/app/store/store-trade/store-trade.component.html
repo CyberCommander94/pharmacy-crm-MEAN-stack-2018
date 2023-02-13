@@ -1,0 +1,36 @@
+<div class="work-area">
+  <app-store-header [title]="title" [addBtn]="addBtn" [filterStr]="filterStr" [controls]="headBtnsVisibility"></app-store-header>
+  <main>
+    <div class="info-block">
+      <p>{{tradeStore?.storeItems?.length}} артикулів</p>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <td style="width: 5%">№</td>
+            <td style="width: 22%" class={{transactionNumSort}} (click)="sortTransNumAct(tradeStore)">№ Накладної</td>
+            <td style="width: 25%" class={{nameSort}} (click)="sortNameAct(tradeStore)">Назва</td>
+            <td style="width: 9%" >Кількість</td>
+            <td style="width: 15%" class={{dateSort}} (click)="sortDateAct(tradeStore)">Дата виготовлення</td>
+            <td style="width: 15%">Термін придатності (діб)</td>
+            <td class="btn-container"></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of tradeStore?.storeItems | filterNamesDrugs:filterStr.str; let i = index;">
+            <td>{{i + 1}}</td>
+            <td>{{item?.transactionNumber}}</td>
+            <td>{{item?.name}}</td>
+            <td>{{item?.count}}</td>
+            <td>{{item?.madeDate | date:"dd.MM.yyyy"}}</td>
+            <td>{{item?.shelfLife}}</td>
+            <td>
+              <input type="button" value="" class="btn btn-write-off" title="Перемістити на склад списання" (click)="moveItemToWriteOff(item?._id)"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </main>
+</div>
+

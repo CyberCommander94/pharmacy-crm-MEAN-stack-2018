@@ -1,0 +1,13 @@
+<app-directory-header [title]="title" [controls]="headBtnsVisibility"></app-directory-header>
+<main>
+  <form class="add-item" (ngSubmit)="editItem()" method="put">
+    <input type="text" placeholder="Повна назва препарату" name="name" *ngIf="drug" [(ngModel)]="drug.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Ціна" name="cost" *ngIf="drug" [(ngModel)]="drug.cost" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Діюча речовина" name="actSubstance" *ngIf="drug" [(ngModel)]="drug.actSubstance" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Упаковка" name="pack" *ngIf="drug" [(ngModel)]="drug.pack" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Аналоги" name="analogs" *ngIf="drug" [(ngModel)]="drug.analogs" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Термін придатності" name="shelfLife" *ngIf="drug" [(ngModel)]="drug.shelfLife" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Фармакологічна група" name="pharmGroup" *ngIf="drug" [(ngModel)]="drug.pharmGroup" AUTOCOMPLETE="off"/>
+    <textarea cols="30" rows="10" placeholder="Інструкція по застосуванню" name="manual" *ngIf="drug" [(ngModel)]="drug.manual"></textarea>
+    <input type="submit" value="Зберегти зміни" /></form>
+</main>

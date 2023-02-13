@@ -1,0 +1,41 @@
+<app-directory-header [title]="title" [controls]="headBtnsVisibility"></app-directory-header>
+<main>
+  <table>
+    <tr>
+      <td>Назва:</td>
+      <td>{{drug?.name}}</td>
+    </tr>
+      <tr>
+        <td>Ціна:</td>
+        <td>{{drug?.cost}}</td>
+      </tr>
+      <tr>
+        <td>Упаковка:</td>
+        <td>{{drug?.pack}}</td>
+      </tr>
+      <tr>
+        <td>Термін придатності(діб):</td>
+        <td>{{drug?.shelfLife}}</td>
+      </tr>
+      <tr>
+        <td>Діюча речовина:</td>
+        <td>{{drug?.actSubstance}}</td>
+      </tr>
+      <tr>
+        <td>Аналоги:</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let item of analogs" class="nobb">
+        <td></td>
+        <td>{{item}}</td>
+      </tr>
+      <tr class="bt">
+        <td>Клас препарату:</td>
+        <td>{{drug?.pharmGroup}}</td>
+      </tr>
+      <tr>
+        <td>Інструкція по застосуванню:</td>
+        <td>{{drug?.manual}}</td>
+      </tr>
+  </table>
+</main>

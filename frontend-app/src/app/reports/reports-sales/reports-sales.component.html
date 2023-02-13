@@ -1,0 +1,21 @@
+<main>
+  <input type="button" value="Звіт за місяць" (click)="monthSalesReport()">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>№ продажу</td>
+        <td>Дата продажу</td>
+        <td>Продавець</td>
+        <td>Заг. сумма(грн.)</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of reportsData.sales; let i = index;" (click)="viewOrderReport(sale?._id)">
+        <td>{{sale?.saleNumber}}</td>
+        <td>{{sale?.saleDate | date:"hh:mm, dd.MM.yyyy"}}</td>
+        <td>{{sale?.saleUser}}</td>
+        <td>{{sale?.finishCost}}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

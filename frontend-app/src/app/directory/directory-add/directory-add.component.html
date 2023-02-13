@@ -1,0 +1,13 @@
+<app-directory-header [title]="title" [controls]="headBtnsVisibility"></app-directory-header>
+<main>
+  <form class="add-item" (ngSubmit)="addItem()" method="post">
+    <input type="text" placeholder="Повна назва препарату" name="name" [(ngModel)]="newDrug.name" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Ціна" name="cost" [(ngModel)]="newDrug.cost" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Діюча речовина" name="actSubstance" [(ngModel)]="newDrug.actSubstance" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Упаковка" name="pack" [(ngModel)]="newDrug.pack" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Аналоги" name="analogs" [(ngModel)]="newDrug.analogs" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Термін придатності" name="shelfLife" [(ngModel)]="newDrug.shelfLife" AUTOCOMPLETE="off"/>
+    <input type="text" placeholder="Фармакологічна група" name="pharmGroup" [(ngModel)]="newDrug.pharmGroup" AUTOCOMPLETE="off"/>
+    <textarea cols="30" rows="10" placeholder="Інструкція по застосуванню" name="manual" [(ngModel)]="newDrug.manual"></textarea>
+    <input type="submit" value="Додати у довідник" /></form>
+</main>
